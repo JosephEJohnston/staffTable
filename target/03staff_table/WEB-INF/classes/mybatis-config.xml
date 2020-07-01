@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 驼峰命名法 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <!-- 别名 -->
+        <package name="com.noob.bean"/>
+    </typeAliases>
+
+    <plugins>
+        <!-- 引入分页插件 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!-- 分页参数合理化，即不能到首页之前 -->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+</configuration>
